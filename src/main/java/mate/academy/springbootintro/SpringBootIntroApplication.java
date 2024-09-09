@@ -1,13 +1,11 @@
-package mate.academy.spring_boot_intro;
+package mate.academy.springbootintro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringBootIntroApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootIntroApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootIntroApplication.class, args);
+    }
 }
