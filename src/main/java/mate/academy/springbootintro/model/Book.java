@@ -29,6 +29,13 @@ public class Book {
     private String description;
     private String coverImage;
 
-    public Book() {
+    private Book() {
+    }
+
+    public Book(@NonNull String title, @NonNull String author, @NonNull String isbn, @NonNull BigDecimal price) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.price = price;
     }
 }
