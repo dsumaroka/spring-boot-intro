@@ -32,7 +32,8 @@ public class Book {
     private Book() {
     }
 
-    public Book(@NonNull String title, @NonNull String author, @NonNull String isbn, @NonNull BigDecimal price) {
+    public Book(@NonNull String title, @NonNull String author,
+                @NonNull String isbn, @NonNull BigDecimal price) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;

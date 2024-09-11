@@ -21,11 +21,8 @@ public class SpringBootIntroApplication {
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
-            Book book = new Book("java", "Gerbert Shildt", "1234", BigDecimal.valueOf(100));
-            /*book.setTitle("java");
-            book.setAuthor("Gerbert Shildt");
-            book.setIsbn("1234");
-            book.setPrice(BigDecimal.valueOf(100));*/
+            Book book = new Book("java", "Gerbert Shildt",
+                    "1234", BigDecimal.valueOf(100));
             bookService.save(book);
             System.out.println(bookService.findAll());
         };
