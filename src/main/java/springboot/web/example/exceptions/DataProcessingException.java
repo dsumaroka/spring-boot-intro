@@ -1,4 +1,4 @@
-package springboot.web.exceptions;
+package springboot.web.example.exceptions;
 
 public class DataProcessingException extends RuntimeException {
     public DataProcessingException(String message, Throwable cause) {

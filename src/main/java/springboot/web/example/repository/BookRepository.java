@@ -1,7 +1,7 @@
-package springboot.web.repository;
+package springboot.web.example.repository;
 
 import java.util.List;
-import springboot.web.model.Book;
+import springboot.web.example.model.Book;
 
 public interface BookRepository {
     Book save(Book book);

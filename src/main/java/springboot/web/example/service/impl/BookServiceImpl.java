@@ -1,11 +1,11 @@
-package springboot.web.service.impl;
+package springboot.web.example.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import springboot.web.model.Book;
-import springboot.web.repository.BookRepository;
-import springboot.web.service.BookService;
 import org.springframework.stereotype.Service;
+import springboot.web.example.repository.BookRepository;
+import springboot.web.example.service.BookService;
+import springboot.web.example.model.Book;
 
 @Service
 @RequiredArgsConstructor

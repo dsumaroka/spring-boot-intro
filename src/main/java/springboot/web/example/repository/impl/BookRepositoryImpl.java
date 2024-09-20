@@ -1,14 +1,14 @@
-package springboot.web.repository.impl;
+package springboot.web.example.repository.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import springboot.web.exceptions.DataProcessingException;
-import springboot.web.model.Book;
-import springboot.web.repository.BookRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
+import springboot.web.example.exceptions.DataProcessingException;
+import springboot.web.example.model.Book;
+import springboot.web.example.repository.BookRepository;
 
 @Repository
 @RequiredArgsConstructor
