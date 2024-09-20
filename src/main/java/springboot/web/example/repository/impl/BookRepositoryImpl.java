@@ -1,6 +1,7 @@
 package springboot.web.example.repository.impl;
 
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -47,7 +48,10 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Book findById(Long id) {
-        return null;
+    public Optional<Book> findById(Long id) {
+        try (Session session = sessionFactory.openSession()) {
+            Book book = session.find(Book.class, id);
+            return Optional.ofNullable(book);
+        }
     }
 }

@@ -3,7 +3,6 @@ package springboot.web.example.dto;
 import java.math.BigDecimal;
 
 public class CreateBookRequestDto {
-    private Long id;
     private String title;
     private String author;
     private String isbn;
