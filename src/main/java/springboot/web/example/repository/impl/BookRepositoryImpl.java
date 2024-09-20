@@ -45,4 +45,9 @@ public class BookRepositoryImpl implements BookRepository {
             throw new DataProcessingException("Can't get all books from DB", e);
         }
     }
+
+    @Override
+    public Book findById(Long id) {
+        return null;
+    }
 }
