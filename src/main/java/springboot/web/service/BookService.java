@@ -1,7 +1,7 @@
-package mate.academy.springbootintro.service;
+package springboot.web.service;
 
 import java.util.List;
-import mate.academy.springbootintro.model.Book;
+import springboot.web.model.Book;
 
 public interface BookService {
     Book save(Book book);

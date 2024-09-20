@@ -1,8 +1,8 @@
-package mate.academy.springbootintro;
+package springboot.web;
 
 import java.math.BigDecimal;
-import mate.academy.springbootintro.model.Book;
-import mate.academy.springbootintro.service.BookService;
+import springboot.web.model.Book;
+import springboot.web.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

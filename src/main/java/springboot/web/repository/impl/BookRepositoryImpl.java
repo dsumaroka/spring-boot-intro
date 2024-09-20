@@ -1,10 +1,10 @@
-package mate.academy.springbootintro.repository.impl;
+package springboot.web.repository.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import mate.academy.springbootintro.exceptions.DataProcessingException;
-import mate.academy.springbootintro.model.Book;
-import mate.academy.springbootintro.repository.BookRepository;
+import springboot.web.exceptions.DataProcessingException;
+import springboot.web.model.Book;
+import springboot.web.repository.BookRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

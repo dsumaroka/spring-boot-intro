@@ -1,10 +1,10 @@
-package mate.academy.springbootintro.service.impl;
+package springboot.web.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import mate.academy.springbootintro.model.Book;
-import mate.academy.springbootintro.repository.BookRepository;
-import mate.academy.springbootintro.service.BookService;
+import springboot.web.model.Book;
+import springboot.web.repository.BookRepository;
+import springboot.web.service.BookService;
 import org.springframework.stereotype.Service;
 
 @Service

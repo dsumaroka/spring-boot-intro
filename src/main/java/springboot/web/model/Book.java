@@ -1,4 +1,4 @@
-package mate.academy.springbootintro.model;
+package springboot.web.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

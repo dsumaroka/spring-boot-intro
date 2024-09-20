@@ -1,7 +1,7 @@
-package mate.academy.springbootintro.repository;
+package springboot.web.repository;
 
 import java.util.List;
-import mate.academy.springbootintro.model.Book;
+import springboot.web.model.Book;
 
 public interface BookRepository {
     Book save(Book book);
