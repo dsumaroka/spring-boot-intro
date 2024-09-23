@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-import springboot.web.example.exceptions.DataProcessingException;
+import springboot.web.example.exception.DataProcessingException;
 import springboot.web.example.model.Book;
 import springboot.web.example.repository.BookRepository;
 

@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import springboot.web.example.dto.BookDto;
 import springboot.web.example.dto.CreateBookRequestDto;
-import springboot.web.example.exceptions.EntityNotFoundException;
+import springboot.web.example.exception.EntityNotFoundException;
 import springboot.web.example.mapper.BookMapper;
 import springboot.web.example.model.Book;
 import springboot.web.example.repository.BookRepository;
