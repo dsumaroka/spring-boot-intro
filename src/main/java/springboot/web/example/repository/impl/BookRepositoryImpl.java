@@ -1,14 +1,15 @@
-package mate.academy.springbootintro.repository.impl;
+package springboot.web.example.repository.impl;
 
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
-import mate.academy.springbootintro.exceptions.DataProcessingException;
-import mate.academy.springbootintro.model.Book;
-import mate.academy.springbootintro.repository.BookRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
+import springboot.web.example.exception.DataProcessingException;
+import springboot.web.example.model.Book;
+import springboot.web.example.repository.BookRepository;
 
 @Repository
 @RequiredArgsConstructor
@@ -43,6 +44,16 @@ public class BookRepositoryImpl implements BookRepository {
             return session.createQuery("FROM Book", Book.class).getResultList();
         } catch (Exception e) {
             throw new DataProcessingException("Can't get all books from DB", e);
+        }
+    }
+
+    @Override
+    public Optional<Book> findById(Long id) {
+        try (Session session = sessionFactory.openSession()) {
+            Book book = session.find(Book.class, id);
+            return Optional.ofNullable(book);
+        } catch (Exception e) {
+            throw new DataProcessingException("Can't get book from DB by id: " + id, e);
         }
     }
 }
