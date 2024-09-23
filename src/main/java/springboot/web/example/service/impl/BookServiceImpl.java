@@ -26,8 +26,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookDto> findAll() {
-        List<Book> bookRepositoryAll = bookRepository.findAll();
-        return bookRepositoryAll.stream()
+        return bookRepository.findAll().stream()
                 .map(bookMapper::toBookDto)
                 .toList();
     }
