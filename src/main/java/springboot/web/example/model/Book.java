@@ -15,8 +15,8 @@ import org.hibernate.annotations.Where;
 @Entity
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE books SET isDeleted = true WHERE id = ?")
-@Where(clause = "isDeleted = false")
+@SQLDelete(sql = "UPDATE books SET is_deleted = true WHERE id = ?")
+@Where(clause = "is_deleted = false")
 @Table(name = "books")
 public class Book {
     @Id
@@ -31,7 +31,8 @@ public class Book {
     @Column(nullable = false)
     private BigDecimal price;
     private String description;
+    @Column(name = "cover_image")
     private String coverImage;
-    @Column(nullable = false)
+    @Column(name = "is_deleted", nullable = false, columnDefinition = "TINYINT")
     private boolean isDeleted = false;
 }
