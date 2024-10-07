@@ -2,13 +2,16 @@ package springboot.web.example.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import springboot.web.example.dto.BookDto;
 import springboot.web.example.dto.CreateBookRequestDto;
+import springboot.web.example.dto.SearchBookParamsDto;
 import springboot.web.example.exception.EntityNotFoundException;
 import springboot.web.example.mapper.BookMapper;
 import springboot.web.example.model.Book;
-import springboot.web.example.repository.BookRepository;
+import springboot.web.example.repository.SpecificationBuilder;
+import springboot.web.example.repository.book.BookRepository;
 import springboot.web.example.service.BookService;
 
 @Service
@@ -16,6 +19,7 @@ import springboot.web.example.service.BookService;
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
+    private final SpecificationBuilder<Book> specBuilder;
 
     @Override
     public BookDto save(CreateBookRequestDto createBookRequestDto) {
@@ -51,4 +55,14 @@ public class BookServiceImpl implements BookService {
     public void deletedById(Long id) {
         bookRepository.deleteById(id);
     }
+
+    @Override
+    public List<BookDto> findAllByCriteria(SearchBookParamsDto searchBookParamsDto) {
+        Specification<Book> bookSpecification = specBuilder.getSpecification(searchBookParamsDto);
+        List<Book> bookListCr = bookRepository.findAll(bookSpecification);
+        return bookListCr.stream()
+                .map(bookMapper::toBookDto)
+                .toList();
+    }
 }
+
