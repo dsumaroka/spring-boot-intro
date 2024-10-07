@@ -8,6 +8,7 @@ import springboot.web.example.model.Book;
 @Component
 public class BookSpecificationProvider {
     Specification<Book> getSpecification(String fieldName, String[] params) {
-        return (root, query, criteriaBuilder) -> root.get(fieldName).in((Arrays.stream(params).toArray()));
+        return (root, query, criteriaBuilder) ->
+                root.get(fieldName).in((Arrays.stream(params).toArray()));
     }
 }
