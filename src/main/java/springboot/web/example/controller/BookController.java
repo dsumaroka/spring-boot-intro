@@ -51,7 +51,7 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    List<BookDto> getAllByCriteria(@RequestBody SearchBookParamsDto searchBookParamsDto) {
+    List<BookDto> getAllByCriteria(SearchBookParamsDto searchBookParamsDto) {
         return bookService.findAllByCriteria(searchBookParamsDto);
     }
 }

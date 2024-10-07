@@ -11,8 +11,8 @@ import springboot.web.example.repository.SpecificationBuilder;
 @RequiredArgsConstructor
 @Component
 public class BookSpecificationBuilder implements SpecificationBuilder<Book> {
-    private SearchBookDtoParser parser;
-    private BookSpecificationProvider specificationProvider;
+    private final SearchBookDtoParser parser;
+    private final BookSpecificationProvider specProvider;
 
     @Override
     public Specification<Book> getSpecification(SearchBookParamsDto searchBookParamsDto) {
@@ -21,7 +21,7 @@ public class BookSpecificationBuilder implements SpecificationBuilder<Book> {
         for (Map.Entry<String, String[]> book : mapOfDtos.entrySet()) {
             String fieldName = book.getKey();
             String[] bookValue = book.getValue();
-            bookSpec.and((specificationProvider.getSpecification(fieldName, bookValue)));
+            bookSpec.and((specProvider.getSpecification(fieldName, bookValue)));
         }
         return bookSpec;
     }
