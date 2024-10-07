@@ -7,17 +7,21 @@ import springboot.web.example.dto.SearchBookParamsDto;
 
 @Component
 public class SearchBookDtoParser {
+    public static final String AUTHOR = "author";
+    public static final String TITLE = "title";
+    public static final String ISBN = "isbn";
+
     public Map<String, String[]> parseSearchBookDto(SearchBookParamsDto searchBookParamsDto) {
-        Map<String, String[]> mapOfDtos = new HashMap<>();
+        Map<String, String[]> searchDtoToMap = new HashMap<>();
         if (searchBookParamsDto.author() != null && searchBookParamsDto.author().length > 0) {
-            mapOfDtos.put("author", searchBookParamsDto.author());
+            searchDtoToMap.put(AUTHOR, searchBookParamsDto.author());
         }
         if (searchBookParamsDto.title() != null && searchBookParamsDto.title().length > 0) {
-            mapOfDtos.put("title", searchBookParamsDto.title());
+            searchDtoToMap.put(TITLE, searchBookParamsDto.title());
         }
         if (searchBookParamsDto.isbn() != null && searchBookParamsDto.isbn().length > 0) {
-            mapOfDtos.put("isbn", searchBookParamsDto.isbn());
+            searchDtoToMap.put(ISBN, searchBookParamsDto.isbn());
         }
-        return mapOfDtos;
+        return searchDtoToMap;
     }
 }

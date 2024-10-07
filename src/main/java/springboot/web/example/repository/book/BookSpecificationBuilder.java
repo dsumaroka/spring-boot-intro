@@ -16,9 +16,9 @@ public class BookSpecificationBuilder implements SpecificationBuilder<Book> {
 
     @Override
     public Specification<Book> getSpecification(SearchBookParamsDto searchBookParamsDto) {
-        Map<String, String[]> mapOfDtos = parser.parseSearchBookDto(searchBookParamsDto);
+        Map<String, String[]> searchDtoToMap = parser.parseSearchBookDto(searchBookParamsDto);
         Specification<Book> bookSpec = null;
-        for (Map.Entry<String, String[]> book : mapOfDtos.entrySet()) {
+        for (Map.Entry<String, String[]> book : searchDtoToMap.entrySet()) {
             String fieldName = book.getKey();
             String[] bookValue = book.getValue();
             Specification<Book> subBookSpec = (specProvider.getSpecification(fieldName, bookValue));
