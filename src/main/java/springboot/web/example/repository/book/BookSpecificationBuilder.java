@@ -17,11 +17,12 @@ public class BookSpecificationBuilder implements SpecificationBuilder<Book> {
     @Override
     public Specification<Book> getSpecification(SearchBookParamsDto searchBookParamsDto) {
         Map<String, String[]> mapOfDtos = parser.parseSearchBookDto(searchBookParamsDto);
-        Specification<Book> bookSpec = Specification.not(null);
+        Specification<Book> bookSpec = null;
         for (Map.Entry<String, String[]> book : mapOfDtos.entrySet()) {
             String fieldName = book.getKey();
             String[] bookValue = book.getValue();
-            bookSpec.and((specProvider.getSpecification(fieldName, bookValue)));
+            Specification<Book> subBookSpec = (specProvider.getSpecification(fieldName, bookValue));
+            bookSpec = bookSpec == null ? subBookSpec : bookSpec.and(subBookSpec);
         }
         return bookSpec;
     }
