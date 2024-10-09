@@ -19,6 +19,7 @@ import springboot.web.example.service.BookService;
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
+    private final SpecificationBuilder<Book> specBuilder;
 
     @Override
     public BookDto save(CreateBookRequestDto createBookRequestDto) {
