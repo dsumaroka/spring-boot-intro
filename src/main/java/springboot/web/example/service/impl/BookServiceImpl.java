@@ -11,7 +11,7 @@ import springboot.web.example.exception.EntityNotFoundException;
 import springboot.web.example.mapper.BookMapper;
 import springboot.web.example.model.Book;
 import springboot.web.example.repository.SpecificationBuilder;
-import springboot.web.example.repository.BookRepository;
+import springboot.web.example.repository.book.BookRepository;
 import springboot.web.example.service.BookService;
 
 @Service
@@ -56,7 +56,7 @@ public class BookServiceImpl implements BookService {
         bookRepository.deleteById(id);
     }
 
-     @Override
+    @Override
     public List<BookDto> findAllByCriteria(SearchBookParamsDto searchBookParamsDto) {
         Specification<Book> bookSpecification = specBuilder.getSpecification(searchBookParamsDto);
         return bookRepository.findAll(bookSpecification)
@@ -65,3 +65,4 @@ public class BookServiceImpl implements BookService {
                 .toList();
     }
 }
+
