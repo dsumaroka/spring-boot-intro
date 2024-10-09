@@ -51,4 +51,13 @@ public class BookServiceImpl implements BookService {
     public void deletedById(Long id) {
         bookRepository.deleteById(id);
     }
+
+     @Override
+    public List<BookDto> findAllByCriteria(SearchBookParamsDto searchBookParamsDto) {
+        Specification<Book> bookSpecification = specBuilder.getSpecification(searchBookParamsDto);
+        return bookRepository.findAll(bookSpecification)
+                .stream()
+                .map(bookMapper::toBookDto)
+                .toList();
+    }
 }
