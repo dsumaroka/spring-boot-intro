@@ -2,12 +2,15 @@ package springboot.web.example.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import springboot.web.example.dto.BookDto;
 import springboot.web.example.dto.CreateBookRequestDto;
+import springboot.web.example.dto.SearchBookParamsDto;
 import springboot.web.example.exception.EntityNotFoundException;
 import springboot.web.example.mapper.BookMapper;
 import springboot.web.example.model.Book;
+import springboot.web.example.repository.SpecificationBuilder;
 import springboot.web.example.repository.BookRepository;
 import springboot.web.example.service.BookService;
 
