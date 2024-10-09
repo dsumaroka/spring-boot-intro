@@ -6,4 +6,3 @@ import springboot.web.example.dto.SearchBookParamsDto;
 public interface SpecificationBuilder<T> {
     Specification<T> getSpecification(SearchBookParamsDto searchBookParamsDto);
 }
-
