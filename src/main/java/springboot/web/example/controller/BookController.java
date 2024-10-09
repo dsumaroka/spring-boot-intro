@@ -48,4 +48,9 @@ public class BookController {
     public void deleteById(@PathVariable Long id) {
         bookService.deletedById(id);
     }
+
+    @GetMapping("/search")
+    public List<BookDto> getAllByCriteria(SearchBookParamsDto searchBookParamsDto) {
+        return bookService.findAllByCriteria(searchBookParamsDto);
+    }
 }
